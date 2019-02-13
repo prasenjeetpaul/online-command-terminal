@@ -1,0 +1,40 @@
+.cmd {
+    margin: calc(15vh - 18px) 15vw;
+    height: 70vh;
+    overflow-y: auto;
+    background-color: #333;
+    padding: 10px;
+    border: 3px solid aqua;
+}
+
+.cmd-input {
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: aqua;
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.cmd-input-tag {
+    display: inline-block; 
+    color: aqua;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.cmd-output {
+    display: block;
+    margin-top: 10px;
+    padding: 0 10px;
+    font-size: 18px;
+    color: aqua;
+    text-align: justify;
+}
+
+.cmd-status {
+    color: green;
+}
+.error {
+    color: red;
+}
