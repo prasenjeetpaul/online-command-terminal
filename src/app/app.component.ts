@@ -26,9 +26,28 @@ export class AppComponent {
         this.http.post<ConsoleOutput>('http://localhost:8000/online-cmd', {query: this.input}).subscribe(
             response => {
                 this.isProcessing = false;
-                this.consoleOutput = response;
+                this.onCmdResponse(response);
+            },
+            error => {
+                this.isProcessing = false;
+                if (error.status === 400) {
+                    this.consoleOutput = {
+                        success: false,
+                        output: error.error.message
+                    }
+                } else {
+                    this.consoleOutput = {
+                        success: false,
+                        output: "Unfortunate Error *_*"
+                    }
+                }
+                
             }
         )
+    }
+
+    onCmdResponse(response): void {
+        this.consoleOutput = response;
     }
 }
 

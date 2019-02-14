@@ -6,7 +6,7 @@ This projects creates a command terminal in the server environment and provides 
 
 1. Run `npm install` to download all the dependency.
 2. Run `npm run-script start-server` to start the server where the command propmt is located.
-3. Run `ng server -o` to start and open the client application in the default browser.
+3. Run `ng serve -o` to start and open the client application in the default browser.
 
 ## Client Application
 
