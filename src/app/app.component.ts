@@ -48,6 +48,21 @@ export class AppComponent {
 
     onCmdResponse(response): void {
         this.consoleOutput = response;
+        let arr = this.consoleOutput.output.split("\r\n")
+                        .filter(row => row.length!=0)
+                        .map(row => row.split("  ")
+                                        .filter(x => x.length!=0)
+                                        .map(value => value.trim()));
+        let formattedArray = arr.map(row => {
+            let count = 1;
+            let obj = {};
+            row.forEach(rowVal => Object.defineProperty(obj, "col"+(count++), {
+                writable: false,
+                value: rowVal
+            }))
+            return obj;
+        });
+        console.log(formattedArray);
     }
 }
 
